@@ -13,53 +13,54 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-foreground pt-16 pb-8 border-t-4 border-brand-burgundy relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-brand-gold/5 rounded-bl-full pointer-events-none" />
+    <footer className="bg-dark-navy pt-16 pb-8 border-t border-violet/30 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-golden-accent/10 rounded-bl-full pointer-events-none blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-violet/10 rounded-tr-full pointer-events-none blur-3xl" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           
           {/* Brand Col */}
           <div className="col-span-1 md:col-span-1">
-            <h3 className="font-serif font-bold text-2xl text-brand-cream mb-4">
+            <h3 className="font-serif font-bold text-2xl text-white mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
               ACHARYA ASHIRWAD<br />CONSULTANCY
             </h3>
-            <p className="text-brand-gold font-serif text-sm leading-relaxed mb-6">
+            <p className="text-golden-accent font-serif text-sm leading-relaxed mb-6">
               Tarot Reading • Astrology • Reiki • Hypnotherapy • Relationship Coaching • Holistic Consultancy
             </p>
           </div>
 
           {/* Links Col */}
           <div className="col-span-1 flex flex-col space-y-3">
-            <h4 className="text-brand-cream font-bold uppercase tracking-wider mb-2">Quick Links</h4>
-            <Link href="#home" className="text-brand-cream/70 hover:text-brand-gold transition-colors text-sm">Home</Link>
-            <Link href="#about" className="text-brand-cream/70 hover:text-brand-gold transition-colors text-sm">About</Link>
-            <Link href="#services" className="text-brand-cream/70 hover:text-brand-gold transition-colors text-sm">Services</Link>
-            <Link href="#consultation" className="text-brand-cream/70 hover:text-brand-gold transition-colors text-sm">Book Consultation</Link>
-            <Link href="#contact" className="text-brand-cream/70 hover:text-brand-gold transition-colors text-sm">Contact</Link>
+            <h4 className="text-white font-bold uppercase tracking-wider mb-2">Quick Links</h4>
+            <Link href="#home" className="text-foreground/70 hover:text-soft-pink transition-colors text-sm">Home</Link>
+            <Link href="#about" className="text-foreground/70 hover:text-soft-pink transition-colors text-sm">About</Link>
+            <Link href="#services" className="text-foreground/70 hover:text-soft-pink transition-colors text-sm">Services</Link>
+            <Link href="#consultation" className="text-foreground/70 hover:text-soft-pink transition-colors text-sm">Book Consultation</Link>
+            <Link href="#contact" className="text-foreground/70 hover:text-soft-pink transition-colors text-sm">Contact</Link>
           </div>
 
           {/* Social Col */}
           <div className="col-span-1 flex flex-col space-y-3">
-            <h4 className="text-brand-cream font-bold uppercase tracking-wider mb-2">Social Media</h4>
-            <a href="#" className="flex items-center text-brand-cream/70 hover:text-brand-gold transition-colors text-sm group">
+            <h4 className="text-white font-bold uppercase tracking-wider mb-2">Social Media</h4>
+            <a href="#" className="flex items-center text-foreground/70 hover:text-soft-pink transition-colors text-sm group">
               <FacebookIcon className="w-4 h-4 mr-2" />
               Facebook
             </a>
-            <a href="#" className="flex items-center text-brand-cream/70 hover:text-brand-gold transition-colors text-sm group">
+            <a href="#" className="flex items-center text-foreground/70 hover:text-soft-pink transition-colors text-sm group">
               <InstagramIcon className="w-4 h-4 mr-2" />
               Instagram
             </a>
-            <a href="https://wa.me/9176920636369" target="_blank" rel="noreferrer" className="flex items-center text-brand-cream/70 hover:text-[#25D366] transition-colors text-sm group">
+            <a href="https://wa.me/917692066369" target="_blank" rel="noreferrer" className="flex items-center text-foreground/70 hover:text-[#25D366] transition-colors text-sm group">
               <MessageCircle className="w-4 h-4 mr-2" />
-              WhatsApp
+              WhatsApp (+91-7692066369)
             </a>
           </div>
 
         </div>
 
-        <div className="border-t border-brand-gold/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-brand-cream/50">
-          <p>© 2026 Acharya Ashirwad Consultancy. All Rights Reserved.</p>
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-foreground/50">
+          <p>© {currentYear} Acharya Ashirwad Consultancy. All Rights Reserved.</p>
           <p className="mt-2 md:mt-0">Designed for Spiritual & Holistic Wellness</p>
         </div>
       </div>

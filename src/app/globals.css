@@ -1,24 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFFDD0; /* Cream */
-  --foreground: #4A1A1A; /* Very dark red/brown for text */
-  --burgundy: #800020;
-  --deep-red: #8B0000;
-  --warm-gold: #D4AF37;
-  --subtle-brown: #8B4513;
+  --background: #0B0B1A; /* Deep cosmic blue/navy */
+  --foreground: #F3E8FF; /* Soft mystical white/purple */
+  --cosmic-blue: #1A1A3A;
+  --royal-purple: #4B0082;
+  --violet: #8A2BE2;
+  --magenta: #8B008B;
+  --soft-pink: #FFB6C1;
+  --golden-accent: #D4AF37;
+  --dark-navy: #050510;
+  --glow-light: rgba(138, 43, 226, 0.5);
   --white: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-brand-burgundy: var(--burgundy);
-  --color-brand-red: var(--deep-red);
-  --color-brand-gold: var(--warm-gold);
-  --color-brand-brown: var(--subtle-brown);
-  --color-brand-cream: var(--background);
-  --color-brand-white: var(--white);
+  --color-cosmic-blue: var(--cosmic-blue);
+  --color-royal-purple: var(--royal-purple);
+  --color-violet: var(--violet);
+  --color-magenta: var(--magenta);
+  --color-soft-pink: var(--soft-pink);
+  --color-golden-accent: var(--golden-accent);
+  --color-dark-navy: var(--dark-navy);
   --font-sans: var(--font-lora), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cinzel), ui-serif, Georgia, serif;
 }
@@ -40,35 +45,40 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: var(--dark-navy);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--burgundy);
+  background: var(--violet);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--deep-red);
+  background: var(--magenta);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, var(--burgundy), var(--warm-gold));
+  background: linear-gradient(to right, var(--violet), var(--golden-accent), var(--soft-pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gold-gradient-bg {
-  background: linear-gradient(135deg, var(--warm-gold), #FFFDD0, var(--warm-gold));
+  background: linear-gradient(135deg, var(--golden-accent), #FFE5B4, var(--golden-accent));
 }
 
-.burgundy-gradient-bg {
-  background: linear-gradient(135deg, var(--burgundy), var(--deep-red));
+.cosmic-gradient-bg {
+  background: linear-gradient(135deg, var(--dark-navy), var(--royal-purple), var(--cosmic-blue));
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(26, 26, 58, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.glow-effect {
+  box-shadow: 0 0 15px var(--glow-light);
 }

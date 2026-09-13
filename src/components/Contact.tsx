@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, Mail } from "lucide-react";
 
 const FacebookIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -13,13 +13,15 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-brand-cream relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 bg-dark-navy relative">
+      <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-10 mix-blend-screen" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-brand-foreground mb-6">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
             Connect With <span className="text-gradient">Acharya Raj</span>
           </h2>
-          <p className="text-lg text-brand-foreground/80 font-serif">
+          <p className="text-lg text-foreground/80 font-serif">
             Reach out to begin your journey towards clarity and wellness.
           </p>
         </div>
@@ -29,58 +31,82 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto bg-brand-white border border-brand-gold/20 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden"
+          className="max-w-4xl mx-auto glass-panel border border-golden-accent/30 rounded-3xl p-8 md:p-12 shadow-[0_15px_50px_rgba(75,0,130,0.3)] relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-gold/5 rounded-bl-full z-0" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-violet/20 rounded-bl-full blur-3xl z-0" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-golden-accent/10 rounded-tr-full blur-3xl z-0" />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
             <div>
-              <h3 className="text-2xl font-serif font-bold text-brand-burgundy mb-2">ACHARYA ASHIRWAD CONSULTANCY</h3>
-              <div className="w-12 h-1 bg-brand-gold mb-6"></div>
+              <h3 className="text-2xl font-serif font-bold text-soft-pink mb-2">ACHARYA ASHIRWAD CONSULTANCY</h3>
+              <div className="w-12 h-1 bg-golden-accent mb-6 shadow-[0_0_10px_rgba(212,175,55,0.8)]"></div>
               
-              <h4 className="text-xl font-bold text-brand-foreground mb-1">ACHARYA DR RAJ</h4>
-              <p className="text-brand-brown font-medium mb-1">Psychiatrist and Astrologer</p>
-              <p className="text-brand-foreground/70 text-sm mb-8">Family Jyotish (Odisha, C.G., M.P.)</p>
+              <h4 className="text-xl font-bold text-white mb-1">ACHARYA DR RAJ</h4>
+              <p className="text-golden-accent font-medium mb-1">Psychiatrist and Astrologer</p>
+              <p className="text-foreground/70 text-sm mb-8">Family Jyotish (Odisha, C.G., M.P.)</p>
               
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-brand-burgundy/10 flex items-center justify-center mr-4">
-                    <Phone className="w-5 h-5 text-brand-burgundy" />
+                  <div className="w-12 h-12 rounded-full bg-royal-purple/30 border border-violet flex items-center justify-center mr-4 glow-effect">
+                    <Phone className="w-5 h-5 text-soft-pink" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wider text-brand-brown">Phone</p>
-                    <p className="text-brand-foreground font-medium">+91-76920636369</p>
+                    <p className="text-xs font-bold uppercase tracking-wider text-golden-accent">Phone</p>
+                    <p className="text-white font-medium text-lg">+91-7692066369</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center">
+                  <div className="w-12 h-12 rounded-full bg-royal-purple/30 border border-violet flex items-center justify-center mr-4 glow-effect">
+                    <Mail className="w-5 h-5 text-soft-pink" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-golden-accent">Email</p>
+                    <p className="text-white font-medium">acharyahemantraj11@gmail.com</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col justify-center">
-              <h4 className="text-lg font-bold text-brand-foreground mb-6">Connect on Social Media</h4>
+              <h4 className="text-lg font-bold text-white mb-6 border-b border-white/10 pb-2">Quick Connect</h4>
+              
               <div className="space-y-4 mb-8">
-                <a href="#" className="flex items-center group">
-                  <div className="w-10 h-10 rounded-full bg-brand-burgundy/10 flex items-center justify-center mr-4 group-hover:bg-brand-burgundy transition-colors">
-                    <FacebookIcon className="w-5 h-5 text-brand-burgundy group-hover:text-brand-white transition-colors" />
-                  </div>
-                  <span className="text-brand-foreground group-hover:text-brand-burgundy transition-colors font-medium">Acharya raj jyotishi</span>
+                <a 
+                  href="https://wa.me/917692066369" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="flex items-center justify-center px-6 py-4 bg-[#25D366] text-white rounded-lg hover:bg-[#20bd5a] transition-all font-bold tracking-wider uppercase text-sm shadow-[0_5px_20px_rgba(37,211,102,0.3)]"
+                >
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  WhatsApp
                 </a>
-                <a href="#" className="flex items-center group">
-                  <div className="w-10 h-10 rounded-full bg-brand-burgundy/10 flex items-center justify-center mr-4 group-hover:bg-brand-burgundy transition-colors">
-                    <InstagramIcon className="w-5 h-5 text-brand-burgundy group-hover:text-brand-white transition-colors" />
-                  </div>
-                  <span className="text-brand-foreground group-hover:text-brand-burgundy transition-colors font-medium">Acharya raj jyotishi</span>
+                
+                <a 
+                  href="tel:+917692066369" 
+                  className="flex items-center justify-center px-6 py-4 bg-royal-purple text-white rounded-lg hover:bg-violet transition-all font-bold tracking-wider uppercase text-sm shadow-[0_5px_20px_rgba(138,43,226,0.3)] border border-violet/50"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Now
+                </a>
+                
+                <a 
+                  href="mailto:acharyahemantraj11@gmail.com" 
+                  className="flex items-center justify-center px-6 py-4 bg-transparent border border-golden-accent/50 text-golden-accent rounded-lg hover:bg-golden-accent/10 transition-all font-bold tracking-wider uppercase text-sm"
+                >
+                  <Mail className="w-5 h-5 mr-2" />
+                  Email Us
                 </a>
               </div>
               
-              <a 
-                href="https://wa.me/9176920636369" 
-                target="_blank" 
-                rel="noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 bg-[#25D366] text-white rounded-lg hover:bg-[#20bd5a] transition-all font-bold tracking-wider uppercase text-sm w-full sm:w-auto"
-              >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                WhatsApp Us
-              </a>
+              <div className="flex space-x-6 justify-center">
+                <a href="#" className="text-foreground/60 hover:text-soft-pink transition-colors" title="Facebook">
+                  <FacebookIcon className="w-6 h-6" />
+                </a>
+                <a href="#" className="text-foreground/60 hover:text-soft-pink transition-colors" title="Instagram">
+                  <InstagramIcon className="w-6 h-6" />
+                </a>
+              </div>
             </div>
           </div>
         </motion.div>

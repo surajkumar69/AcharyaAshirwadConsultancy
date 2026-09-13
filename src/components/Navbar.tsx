@@ -29,18 +29,18 @@ export default function Navbar() {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-brand-cream/90 backdrop-blur-md shadow-md py-4"
+          ? "bg-dark-navy/90 backdrop-blur-md shadow-lg shadow-violet/10 py-4"
           : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="#home" className="flex flex-col text-brand-burgundy">
-            <span className="font-serif font-bold text-xl md:text-2xl tracking-wider uppercase leading-none">
+          <Link href="#home" className="flex flex-col text-golden-accent hover:text-soft-pink transition-colors">
+            <span className="font-serif font-bold text-xl md:text-2xl tracking-wider uppercase leading-none glow-effect text-gradient">
               Acharya Ashirwad
             </span>
-            <span className="font-sans text-xs md:text-sm tracking-[0.2em] text-brand-brown uppercase mt-1">
+            <span className="font-sans text-xs md:text-sm tracking-[0.2em] text-violet uppercase mt-1">
               Consultancy
             </span>
           </Link>
@@ -51,14 +51,14 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-brand-foreground hover:text-brand-burgundy transition-colors text-sm uppercase tracking-wider font-medium"
+                className="text-foreground hover:text-golden-accent transition-colors text-sm uppercase tracking-wider font-medium hover:glow-effect"
               >
                 {link.name}
               </Link>
             ))}
             <Link
               href="#consultation"
-              className="bg-brand-burgundy text-brand-cream px-6 py-2 rounded-full hover:bg-brand-red transition-all duration-300 shadow-md hover:shadow-lg uppercase text-sm tracking-wider font-semibold border border-transparent hover:border-brand-gold"
+              className="bg-royal-purple text-white px-6 py-2 rounded-full hover:bg-violet transition-all duration-300 shadow-md hover:shadow-[0_0_15px_rgba(138,43,226,0.6)] uppercase text-sm tracking-wider font-semibold border border-violet hover:border-golden-accent"
             >
               Book Now
             </Link>
@@ -68,7 +68,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-brand-burgundy focus:outline-none"
+              className="text-golden-accent focus:outline-none"
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -83,7 +83,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-brand-cream/95 backdrop-blur-lg border-b border-brand-gold/20"
+            className="md:hidden bg-dark-navy/95 backdrop-blur-lg border-b border-violet/30"
           >
             <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col items-center">
               {navLinks.map((link) => (
@@ -91,7 +91,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block w-full text-center py-3 text-brand-foreground hover:text-brand-burgundy hover:bg-brand-gold/10 transition-colors uppercase tracking-wider text-sm font-medium rounded-md"
+                  className="block w-full text-center py-3 text-foreground hover:text-golden-accent hover:bg-royal-purple/20 transition-colors uppercase tracking-wider text-sm font-medium rounded-md"
                 >
                   {link.name}
                 </Link>
@@ -99,7 +99,7 @@ export default function Navbar() {
               <Link
                 href="#consultation"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center mt-4 bg-brand-burgundy text-brand-cream px-6 py-3 rounded-full hover:bg-brand-red transition-all shadow-md uppercase tracking-wider text-sm font-bold"
+                className="block w-full text-center mt-4 bg-royal-purple text-white px-6 py-3 rounded-full hover:bg-violet transition-all shadow-[0_0_10px_rgba(138,43,226,0.5)] uppercase tracking-wider text-sm font-bold"
               >
                 Book Now
               </Link>
