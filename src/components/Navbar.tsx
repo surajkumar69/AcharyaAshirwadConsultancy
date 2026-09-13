@@ -4,7 +4,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { siteConfig } from "@/config/site";
 
+const FacebookIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+);
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -56,6 +60,11 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            
+            <a href={siteConfig.social.facebookUrl} target="_blank" rel="noreferrer" className="text-foreground hover:text-[#1877F2] transition-colors hover:glow-effect">
+              <FacebookIcon className="w-5 h-5" />
+            </a>
+
             <Link
               href="#consultation"
               className="bg-royal-purple text-white px-6 py-2 rounded-full hover:bg-violet transition-all duration-300 shadow-md hover:shadow-[0_0_15px_rgba(138,43,226,0.6)] uppercase text-sm tracking-wider font-semibold border border-violet hover:border-golden-accent"

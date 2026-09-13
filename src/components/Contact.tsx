@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, Mail } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 const FacebookIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -52,7 +53,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-golden-accent">Phone</p>
-                    <p className="text-white font-medium text-lg">+91-7692066369</p>
+                    <p className="text-white font-medium text-lg">{siteConfig.contact.phone}</p>
                   </div>
                 </div>
                 
@@ -62,7 +63,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-golden-accent">Email</p>
-                    <p className="text-white font-medium">acharyahemantraj11@gmail.com</p>
+                    <p className="text-white font-medium">{siteConfig.contact.email}</p>
                   </div>
                 </div>
               </div>
@@ -73,7 +74,7 @@ export default function Contact() {
               
               <div className="space-y-4 mb-8">
                 <a 
-                  href="https://wa.me/917692066369" 
+                  href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, "")}`} 
                   target="_blank" 
                   rel="noreferrer"
                   className="flex items-center justify-center px-6 py-4 bg-[#25D366] text-white rounded-lg hover:bg-[#20bd5a] transition-all font-bold tracking-wider uppercase text-sm shadow-[0_5px_20px_rgba(37,211,102,0.3)]"
@@ -83,7 +84,7 @@ export default function Contact() {
                 </a>
                 
                 <a 
-                  href="tel:+917692066369" 
+                  href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`} 
                   className="flex items-center justify-center px-6 py-4 bg-royal-purple text-white rounded-lg hover:bg-violet transition-all font-bold tracking-wider uppercase text-sm shadow-[0_5px_20px_rgba(138,43,226,0.3)] border border-violet/50"
                 >
                   <Phone className="w-5 h-5 mr-2" />
@@ -91,7 +92,7 @@ export default function Contact() {
                 </a>
                 
                 <a 
-                  href="mailto:acharyahemantraj11@gmail.com" 
+                  href={`mailto:${siteConfig.contact.email}`} 
                   className="flex items-center justify-center px-6 py-4 bg-transparent border border-golden-accent/50 text-golden-accent rounded-lg hover:bg-golden-accent/10 transition-all font-bold tracking-wider uppercase text-sm"
                 >
                   <Mail className="w-5 h-5 mr-2" />
@@ -100,10 +101,10 @@ export default function Contact() {
               </div>
               
               <div className="flex space-x-6 justify-center">
-                <a href="#" className="text-foreground/60 hover:text-soft-pink transition-colors" title="Facebook">
+                <a href={siteConfig.social.facebookUrl} target="_blank" rel="noreferrer" className="text-foreground/60 hover:text-[#1877F2] transition-colors" title="Facebook">
                   <FacebookIcon className="w-6 h-6" />
                 </a>
-                <a href="#" className="text-foreground/60 hover:text-soft-pink transition-colors" title="Instagram">
+                <a href={siteConfig.social.instagramUrl} target="_blank" rel="noreferrer" className="text-foreground/60 hover:text-soft-pink transition-colors" title="Instagram">
                   <InstagramIcon className="w-6 h-6" />
                 </a>
               </div>

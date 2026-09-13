@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
-
+import { siteConfig } from "@/config/site";
 const FacebookIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
 );
@@ -43,17 +43,17 @@ export default function Footer() {
           {/* Social Col */}
           <div className="col-span-1 flex flex-col space-y-3">
             <h4 className="text-white font-bold uppercase tracking-wider mb-2">Social Media</h4>
-            <a href="#" className="flex items-center text-foreground/70 hover:text-soft-pink transition-colors text-sm group">
+            <a href={siteConfig.social.facebookUrl} target="_blank" rel="noreferrer" className="flex items-center text-foreground/70 hover:text-soft-pink transition-colors text-sm group">
               <FacebookIcon className="w-4 h-4 mr-2" />
-              Facebook
+              {siteConfig.social.facebookName}
             </a>
-            <a href="#" className="flex items-center text-foreground/70 hover:text-soft-pink transition-colors text-sm group">
+            <a href={siteConfig.social.instagramUrl} target="_blank" rel="noreferrer" className="flex items-center text-foreground/70 hover:text-soft-pink transition-colors text-sm group">
               <InstagramIcon className="w-4 h-4 mr-2" />
-              Instagram
+              {siteConfig.social.instagramName}
             </a>
-            <a href="https://wa.me/917692066369" target="_blank" rel="noreferrer" className="flex items-center text-foreground/70 hover:text-[#25D366] transition-colors text-sm group">
+            <a href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, "")}`} target="_blank" rel="noreferrer" className="flex items-center text-foreground/70 hover:text-[#25D366] transition-colors text-sm group">
               <MessageCircle className="w-4 h-4 mr-2" />
-              WhatsApp (+91-7692066369)
+              WhatsApp ({siteConfig.contact.whatsapp})
             </a>
           </div>
 

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, CheckCircle2, Copy } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import { siteConfig } from "@/config/site";
 
 export default function Booking() {
   const [step, setStep] = useState(1);
@@ -24,7 +25,7 @@ export default function Booking() {
   };
 
   const handleCopyUPI = () => {
-    navigator.clipboard.writeText("vermapriyanshu126-1@okaxis");
+    navigator.clipboard.writeText(siteConfig.payment.upiId);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -169,35 +170,38 @@ export default function Booking() {
                       
                       <div className="bg-dark-navy/60 border border-golden-accent/30 rounded-2xl p-6 flex flex-col items-center max-w-sm mx-auto shadow-[0_0_20px_rgba(212,175,55,0.15)]">
                         <div className="bg-white p-4 rounded-xl mb-6 shadow-inner w-48 h-48 flex items-center justify-center relative overflow-hidden">
-                          {/* Placeholder for UPI QR Code - User requested to use uploaded UPI QR image exactly as provided */}
-                          {/* Assuming the image is placed at /qr.jpg based on common naming or they will replace this path */}
-                          <img src="/qr.jpg" alt="UPI QR Code" className="w-full h-full object-contain" onError={(e) => { e.currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"; }} />
+                          <Image src="/images/upi-qr.jpg" alt="UPI QR Code" fill className="object-contain p-2" unoptimized />
                         </div>
                         
                         <div className="text-center w-full mb-6">
-                          <p className="text-white font-semibold text-lg mb-1">Priyanshu Verma</p>
+                          <p className="text-white font-semibold text-lg mb-1">{siteConfig.payment.name}</p>
                           <div className="bg-black/40 px-4 py-2 rounded-lg flex items-center justify-between border border-violet/20">
-                            <span className="text-golden-accent font-mono text-sm break-all">vermapriyanshu126-1@okaxis</span>
+                            <span className="text-golden-accent font-mono text-sm break-all">{siteConfig.payment.upiId}</span>
                             <button onClick={handleCopyUPI} className="ml-3 text-white hover:text-soft-pink transition-colors" title="Copy UPI ID">
                               <Copy className="w-4 h-4" />
                             </button>
                           </div>
-                          {copied && <p className="text-green-400 text-xs mt-2 transition-opacity">UPI ID copied!</p>}
+                          {copied && <p className="text-green-400 text-xs mt-2 transition-opacity">UPI ID copied successfully!</p>}
                           <p className="text-xs text-foreground/60 mt-4 uppercase tracking-widest">Scan to pay with any UPI app</p>
                         </div>
 
-                        <a href="upi://pay?pa=vermapriyanshu126-1@okaxis&pn=Priyanshu%20Verma&cu=INR" className="w-full py-3 bg-gradient-to-r from-violet to-royal-purple text-white rounded-lg text-center font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all md:hidden mb-4">
+                        <a href={`upi://pay?pa=${siteConfig.payment.upiId}&pn=${encodeURIComponent(siteConfig.payment.name)}&cu=INR`} className="w-full py-3 bg-gradient-to-r from-violet to-royal-purple text-white rounded-lg text-center font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all md:hidden mb-4">
                           Pay via UPI App
+                        </a>
+                        
+                        <a href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noreferrer" className="w-full py-3 bg-[#25D366]/20 border border-[#25D366]/50 text-white rounded-lg flex items-center justify-center font-bold uppercase tracking-wider shadow-lg hover:bg-[#25D366]/30 transition-all text-sm mb-4">
+                          <MessageCircle className="w-4 h-4 mr-2" />
+                          WhatsApp Payment Help
                         </a>
                       </div>
 
-                      <div className="bg-violet/10 border border-violet/30 rounded-lg p-4 text-center text-sm text-foreground/80">
-                        <p>UPI Payment Section. Note: Payment verification is manual.</p>
+                      <div className="bg-violet/10 border border-violet/30 rounded-lg p-4 text-center text-sm text-foreground/80 flex flex-col items-center">
+                        <p className="mb-2">Payment completed? Submit your booking details.</p>
                       </div>
 
                       <div className="flex gap-4">
                         <button type="button" onClick={() => setStep(3)} className="w-1/3 py-4 bg-transparent border border-violet/30 text-white rounded-lg hover:bg-white/5 transition-all font-bold tracking-wider uppercase">Back</button>
-                        <button onClick={submitBooking} className="w-2/3 py-4 bg-golden-accent text-dark-navy rounded-lg hover:bg-[#FFE5B4] transition-all font-bold tracking-wider uppercase shadow-[0_0_15px_rgba(212,175,55,0.5)]">I Have Paid</button>
+                        <button onClick={submitBooking} className="w-2/3 py-4 bg-golden-accent text-dark-navy rounded-lg hover:bg-[#FFE5B4] transition-all font-bold tracking-wider uppercase shadow-[0_0_15px_rgba(212,175,55,0.5)]">Submit Booking</button>
                       </div>
                     </motion.div>
                   )}
@@ -210,12 +214,12 @@ export default function Booking() {
                       </div>
                       <h3 className="text-3xl font-serif text-white mb-2">Thank you for booking your consultation.</h3>
                       <p className="text-foreground/80 max-w-md mx-auto mb-8">
-                        Your request has been received. We will verify your payment and contact you shortly to confirm your session.
+                        Your request has been received. We will verify your manual payment and contact you shortly to confirm your session.
                       </p>
                       <div className="bg-dark-navy/50 border border-violet/30 rounded-xl p-6 inline-block text-left">
                         <p className="text-sm text-golden-accent mb-1 uppercase tracking-wider">Contact Us directly:</p>
-                        <p className="text-white text-lg mb-1">Phone: +91-7692066369</p>
-                        <p className="text-white text-lg">Email: acharyahemantraj11@gmail.com</p>
+                        <p className="text-white text-lg mb-1">Phone: {siteConfig.contact.phone}</p>
+                        <p className="text-white text-lg">Email: {siteConfig.contact.email}</p>
                       </div>
                       <div className="mt-8">
                         <button onClick={() => setStep(1)} className="py-3 px-8 bg-transparent border border-violet/30 text-white rounded-lg hover:bg-white/5 transition-all font-bold tracking-wider uppercase">Book Another</button>
@@ -248,11 +252,11 @@ export default function Booking() {
                 <div className="space-y-6 mb-10">
                   <div>
                     <p className="text-golden-accent text-sm font-bold uppercase tracking-wider mb-1">Phone / WhatsApp</p>
-                    <p className="text-2xl font-serif">+91-7692066369</p>
+                    <p className="text-2xl font-serif">{siteConfig.contact.phone}</p>
                   </div>
                   <div>
                     <p className="text-golden-accent text-sm font-bold uppercase tracking-wider mb-1">Email Us</p>
-                    <p className="text-lg">acharyahemantraj11@gmail.com</p>
+                    <p className="text-lg">{siteConfig.contact.email}</p>
                   </div>
                   <div>
                     <p className="text-golden-accent text-sm font-bold uppercase tracking-wider mb-1">Consultation Mode</p>
@@ -262,7 +266,7 @@ export default function Booking() {
 
                 <div className="space-y-4">
                   <a 
-                    href="https://wa.me/917692066369" 
+                    href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}`} 
                     target="_blank" 
                     rel="noreferrer"
                     className="flex items-center justify-center w-full py-4 bg-[#25D366] text-white rounded-lg hover:bg-[#20bd5a] transition-all font-bold tracking-wider uppercase shadow-[0_5px_20px_rgba(37,211,102,0.4)]"
@@ -271,7 +275,7 @@ export default function Booking() {
                     Chat on WhatsApp
                   </a>
                   <a 
-                    href="tel:+917692066369" 
+                    href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, '')}`} 
                     className="flex items-center justify-center w-full py-4 bg-transparent border border-white/50 text-white rounded-lg hover:bg-white/10 transition-all font-bold tracking-wider uppercase"
                   >
                     Call Now
