@@ -31,8 +31,8 @@ export default function About() {
           >
             <div className="relative aspect-[3/4] w-full max-w-md mx-auto rounded-2xl overflow-hidden border-2 border-golden-accent/30 shadow-[0_0_50px_rgba(138,43,226,0.3)] bg-cosmic-blue/50">
               <div className="absolute inset-0 bg-gradient-to-t from-dark-navy via-dark-navy/20 to-transparent z-10" />
-              {/* Fallback pattern background to represent the portrait area */}
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1577900231649-db4f796a5d4d?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-screen opacity-60" />
+              {/* Spiritual abstract background for About Section */}
+              <div className="absolute inset-0 bg-[url('/images/about-spiritual.webp')] bg-cover bg-center mix-blend-screen opacity-90" />
             </div>
             
             <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-golden-accent/20 rounded-full blur-3xl -z-10" />

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import { Sparkles } from "lucide-react";
 
 export default function Services() {
@@ -11,61 +10,61 @@ export default function Services() {
       id: "tarot",
       title: "Tarot Reading",
       description: "Personalized tarot-based guidance and reflective consultation.",
-      image: "https://images.unsplash.com/photo-1636903251268-2c262e31d4e4?auto=format&fit=crop&w=600&q=80"
+      image: "/images/services/tarot-reading.webp"
     },
     {
       id: "angel",
       title: "Angel Therapy",
       description: "Spiritual and reflective wellness sessions.",
-      image: "https://images.unsplash.com/photo-1520114815410-b9cc67a2166a?auto=format&fit=crop&w=600&q=80"
+      image: "/images/services/angel-therapy.webp"
     },
     {
       id: "quantum",
       title: "Quantum Energy Healing",
       description: "Holistic wellness-oriented energy sessions.",
-      image: "https://images.unsplash.com/photo-1518066000714-58c45f1a2c08?auto=format&fit=crop&w=600&q=80"
+      image: "/images/services/quantum-energy.webp"
     },
     {
       id: "plr",
       title: "PLR",
       description: "Explore deeper reflective insights and inner growth.",
-      image: "https://images.unsplash.com/photo-1498038676233-03002636a0fb?auto=format&fit=crop&w=600&q=80"
+      image: "/images/services/plr.webp"
     },
     {
       id: "reiki",
       title: "REIKI",
       description: "Reiki-based holistic wellness sessions.",
-      image: "https://images.unsplash.com/photo-1620025916053-43fdb80d2850?auto=format&fit=crop&w=600&q=80"
+      image: "/images/services/reiki.webp"
     },
     {
       id: "akashic",
       title: "Akashic Records Reading",
       description: "Spiritual and reflective consultation.",
-      image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=600&q=80"
+      image: "/images/services/akashic-records.webp"
     },
     {
       id: "hypnotherapy",
       title: "Hypnotherapy",
       description: "Professional hypnotherapy consultation.",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80"
+      image: "/images/services/hypnotherapy.webp"
     },
     {
       id: "sex-therapy",
       title: "Sex Therapy",
       description: "Confidential relationship and sexual-wellness consultation.",
-      image: "https://images.unsplash.com/photo-1587130545934-2e20b337c768?auto=format&fit=crop&w=600&q=80"
+      image: "/images/services/sex-therapy.webp"
     },
     {
       id: "relationship",
       title: "Relationship Coaching",
       description: "Guidance focused on communication, relationships and personal development.",
-      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80"
+      image: "/images/services/relationship-coaching.webp"
     },
     {
       id: "astrology",
       title: "Astrology / Family Jyotish",
       description: "Astrology consultation with focus on Family Jyotish.",
-      image: "https://images.unsplash.com/photo-1532968961962-8a0cb3a2d4f5?auto=format&fit=crop&w=600&q=80"
+      image: "/images/services/astrology-jyotish.webp"
     }
   ];
 
@@ -129,10 +128,10 @@ export default function Services() {
                   alt={service.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B1A] via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B1A] via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
               </div>
               
-              <div className="p-6 flex-grow flex flex-col">
+              <div className="p-6 flex-grow flex flex-col relative">
                 <h3 className="text-xl font-serif font-bold text-white mb-3 group-hover:text-soft-pink transition-colors">
                   {service.title}
                 </h3>
@@ -142,15 +141,15 @@ export default function Services() {
                 </p>
                 
                 <div className="flex flex-col gap-3 mt-auto">
-                  <Link 
-                    href="#consultation" 
-                    className="w-full text-center py-2.5 bg-royal-purple text-white rounded-lg hover:bg-violet transition-all text-sm font-semibold tracking-wide uppercase hover:shadow-[0_0_15px_rgba(138,43,226,0.5)] border border-transparent hover:border-golden-accent/50"
-                  >
-                    Book Consultation
-                  </Link>
                   <button className="w-full text-center py-2.5 bg-transparent border border-violet/30 text-golden-accent rounded-lg hover:bg-violet/10 transition-colors text-sm font-semibold tracking-wide uppercase">
                     Learn More
                   </button>
+                  <Link 
+                    href="#consultation" 
+                    className="w-full text-center py-2.5 bg-royal-purple text-white rounded-lg hover:bg-violet transition-all text-sm font-semibold tracking-wide uppercase hover:shadow-[0_0_15px_rgba(138,43,226,0.5)] border border-transparent hover:border-golden-accent/50 glow-effect"
+                  >
+                    Book Consultation
+                  </Link>
                 </div>
               </div>
             </motion.div>

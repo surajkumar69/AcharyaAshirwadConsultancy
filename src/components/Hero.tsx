@@ -32,8 +32,8 @@ export default function Hero() {
       {/* Background with abstract glowing effects and stars */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-dark-navy z-0" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20 mix-blend-screen z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-navy/80 to-dark-navy z-10" />
+        <div className="absolute inset-0 bg-[url('/images/hero-spiritual.webp')] bg-cover bg-center opacity-40 mix-blend-screen z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-navy/60 to-dark-navy z-10" />
         <div className="absolute inset-0 cosmic-gradient-bg opacity-40 mix-blend-overlay z-10" />
         
         {/* Animated Orbs/Glows */}
